@@ -1,0 +1,464 @@
+/* Micro Posting plugin styles */
+
+/* Root container */
+.micro-posting-root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+/* Toolbar */
+.micro-posting-toolbar {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-4-2);
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.micro-posting-toolbar .search-input-container {
+	flex: 1;
+}
+
+.micro-posting-layout-toggle {
+	display: flex;
+	gap: var(--size-2-1);
+}
+
+.micro-posting-quick-filters {
+	display: flex;
+	gap: var(--size-2-1);
+}
+
+/* Main area (sidebar + content) */
+.micro-posting-main {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+}
+
+/* Sidebar */
+.micro-posting-sidebar {
+	width: 200px;
+	border-right: 1px solid var(--background-modifier-border);
+	overflow-y: auto;
+	padding: var(--size-4-2);
+	transition: width 200ms ease, padding 200ms ease, opacity 200ms ease;
+}
+
+.micro-posting-nav {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+}
+
+.micro-posting-section-title {
+	font-size: var(--font-smaller);
+	font-weight: 600;
+	color: var(--text-muted);
+	padding: var(--size-2-1) 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.micro-posting-tag-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+}
+
+/* Content area */
+.micro-posting-content {
+	flex: 1;
+	overflow-y: auto;
+	padding: var(--size-4-2);
+}
+
+/* Editor */
+.micro-posting-editor {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-1);
+	padding: var(--size-4-2);
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.micro-posting-input-row {
+	display: flex;
+	align-items: flex-end;
+	gap: var(--size-4-2);
+	flex: 1;
+}
+
+.micro-posting-textarea {
+	flex: 1;
+	resize: none;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	padding: var(--size-4-2);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: inherit;
+	font-size: var(--font-ui-small);
+	line-height: var(--line-height-normal);
+	min-height: 36px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.micro-posting-textarea:focus {
+	border-color: var(--interactive-accent);
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.25);
+}
+
+/* Edit indicator */
+.micro-posting-edit-indicator {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-2-1) var(--size-4-2);
+	background: var(--background-secondary);
+	border-radius: var(--radius-s);
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	margin-bottom: var(--size-2-1);
+}
+
+.micro-posting-edit-cancel {
+	margin-left: auto;
+}
+
+/* Quick Capture modal */
+.micro-posting-quick-capture {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-2);
+}
+
+.micro-posting-quick-capture h3 {
+	margin: 0;
+}
+
+.micro-posting-quick-capture .micro-posting-input-row {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--size-4-2);
+}
+
+.micro-posting-quick-capture .micro-posting-textarea {
+	min-height: 80px;
+}
+
+.micro-posting-quick-capture .mod-cta {
+	align-self: flex-end;
+}
+
+/* Date group headers */
+.micro-posting-date-group {
+	margin-bottom: var(--size-4-4);
+}
+
+.micro-posting-date-header {
+	font-size: var(--font-smaller);
+	font-weight: 600;
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin: 0 0 var(--size-4-2) 0;
+	padding-bottom: var(--size-2-1);
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Entry cards */
+.micro-posting-card {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	padding: var(--size-4-2);
+	margin-bottom: var(--size-4-2);
+	transition: background-color 100ms ease;
+}
+
+.micro-posting-card:hover {
+	background: var(--background-secondary);
+}
+
+.micro-posting-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: var(--size-2-1);
+}
+
+.micro-posting-card-time {
+	font-size: var(--font-smaller);
+	color: var(--text-muted);
+}
+
+.micro-posting-card-menu {
+	opacity: 0;
+	transition: opacity 100ms ease;
+}
+
+.micro-posting-card:hover .micro-posting-card-menu,
+.micro-posting-card-menu:focus-visible {
+	opacity: 1;
+}
+
+.micro-posting-card-body {
+	font-size: var(--font-ui-small);
+	line-height: var(--line-height-normal);
+}
+
+.micro-posting-card-body p {
+	margin: 0;
+}
+
+.micro-posting-card-body p + p {
+	margin-top: var(--size-2-1);
+}
+
+/* Chat mode */
+.micro-posting-chat-mode {
+	display: flex;
+	flex-direction: column;
+}
+
+.micro-posting-chat-date-separator {
+	text-align: center;
+	font-size: var(--font-smaller);
+	color: var(--text-muted);
+	padding: var(--size-4-2) 0;
+	position: relative;
+}
+
+.micro-posting-chat-date-separator::before,
+.micro-posting-chat-date-separator::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	width: calc(50% - 4em);
+	height: 1px;
+	background: var(--background-modifier-border);
+}
+
+.micro-posting-chat-date-separator::before {
+	left: 0;
+}
+
+.micro-posting-chat-date-separator::after {
+	right: 0;
+}
+
+.micro-posting-chat-bubble {
+	max-width: 85%;
+	margin-bottom: var(--size-2-1);
+}
+
+.micro-posting-chat-bubble .micro-posting-card {
+	border-radius: var(--radius-m);
+	background: var(--background-secondary);
+	border: none;
+}
+
+.micro-posting-chat-bubble .micro-posting-card:hover {
+	background: var(--background-modifier-hover);
+}
+
+/* Result count */
+.micro-posting-result-count {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+/* Quick filter buttons */
+.micro-posting-filter-btn {
+	font-size: var(--font-ui-smaller);
+	padding: var(--size-2-1) var(--size-4-1);
+	border-radius: var(--radius-s);
+	border: 1px solid var(--background-modifier-border);
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+	transition: all 100ms ease;
+}
+
+.micro-posting-filter-btn:hover {
+	color: var(--text-normal);
+	border-color: var(--interactive-accent);
+}
+
+.micro-posting-filter-btn.is-active {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+/* Layout toggle active state */
+.micro-posting-layout-toggle .clickable-icon.is-active {
+	color: var(--interactive-accent);
+}
+
+/* Search highlight */
+mark.micro-posting-highlight {
+	background: var(--text-highlight-bg);
+	color: inherit;
+	padding: 0;
+	border-radius: 2px;
+}
+
+/* Tag empty state */
+.micro-posting-tag-empty {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+	padding: var(--size-2-1) 0;
+}
+
+/* Tag flair (count badge) */
+.micro-posting-tag-list .tree-item-flair {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-faint);
+	margin-left: auto;
+}
+
+/* Sidebar nav active item */
+.micro-posting-nav .tree-item-self.is-active,
+.micro-posting-tag-list .tree-item-self.is-active {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+	font-weight: 600;
+}
+
+/* Search input clear button visibility */
+.micro-posting-toolbar .search-input-clear-button {
+	cursor: pointer;
+}
+
+.micro-posting-toolbar .search-input-container input:placeholder-shown + .search-input-clear-button {
+	display: none;
+}
+
+/* Long content folding */
+.micro-posting-card-body.is-folded {
+	max-height: 150px;
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.micro-posting-fold-toggle {
+	font-size: var(--font-ui-smaller);
+	color: var(--interactive-accent);
+	cursor: pointer;
+	padding: var(--size-2-1) 0;
+	text-align: center;
+}
+
+.micro-posting-fold-toggle:hover {
+	text-decoration: underline;
+}
+
+/* Empty state */
+.micro-posting-empty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: var(--text-muted);
+	text-align: center;
+	padding: var(--size-4-8);
+}
+
+/* Sidebar collapsed state */
+.micro-posting-sidebar.is-collapsed {
+	width: 0;
+	padding: 0;
+	opacity: 0;
+	overflow: hidden;
+	border-right: none;
+}
+
+/* Sidebar toggle button (in toolbar) */
+.micro-posting-sidebar-toggle {
+	flex-shrink: 0;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+	.micro-posting-toolbar {
+		flex-wrap: wrap;
+		gap: var(--size-2-1);
+	}
+
+	.micro-posting-quick-filters {
+		display: none;
+	}
+
+	.micro-posting-sidebar {
+		width: 0;
+		padding: 0;
+		opacity: 0;
+		overflow: hidden;
+		border-right: none;
+	}
+
+	.micro-posting-sidebar.is-mobile-open {
+		width: 200px;
+		padding: var(--size-4-2);
+		opacity: 1;
+		overflow-y: auto;
+		border-right: 1px solid var(--background-modifier-border);
+	}
+
+	.micro-posting-chat-bubble {
+		max-width: 95%;
+	}
+
+	.micro-posting-result-count {
+		display: none;
+	}
+}
+
+/* Obsidian mobile (is-mobile class on body) */
+.is-mobile .micro-posting-toolbar {
+	flex-wrap: wrap;
+	gap: var(--size-2-1);
+}
+
+.is-mobile .micro-posting-quick-filters {
+	order: 3;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.is-mobile .micro-posting-sidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+	background: var(--background-primary);
+	width: 0;
+	padding: 0;
+	opacity: 0;
+	overflow: hidden;
+	border-right: none;
+	transition: width 200ms ease, padding 200ms ease, opacity 200ms ease;
+}
+
+.is-mobile .micro-posting-sidebar.is-mobile-open {
+	width: 220px;
+	padding: var(--size-4-2);
+	opacity: 1;
+	overflow-y: auto;
+	border-right: 1px solid var(--background-modifier-border);
+}
+
+.is-mobile .micro-posting-main {
+	position: relative;
+}
+
+.is-mobile .micro-posting-chat-bubble {
+	max-width: 95%;
+}
